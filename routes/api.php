@@ -6,6 +6,8 @@ use App\Http\Controllers\BrandController;
 use App\Http\Controllers\ModelController;
 use App\Http\Controllers\CarController;
 use App\Http\Controllers\PhotoController;
+use App\Http\Controllers\RentalController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -26,3 +28,4 @@ Route::post('/models/create', [ModelController::class, 'store']);
 Route::get('/cars', [CarController::class, 'index']);
 Route::post('/cars/create', [CarController::class, 'store']);
 Route::post('/photos/create', [PhotoController::class, 'store']);
+Route::post('/rentals/create', [RentalController::class, 'store']);
