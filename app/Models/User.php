@@ -42,4 +42,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    
+    // Definir a relação com os aluguéis
+    public function rentals()
+    {
+        return $this->hasMany(Rental::class);
+    }
 }

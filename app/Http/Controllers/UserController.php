@@ -30,5 +30,19 @@ class UserController extends Controller
         return response()->json($user, 201);
     }
 
-   
+    /**
+     * Get rentals of a specific user.
+     *
+     * @param  int  $user_id
+     * @return \Illuminate\Http\Response
+     */
+    public function getUserRentals($user_id)
+    {
+        $user = User::findOrFail($user_id);
+
+        // Carregar os aluguéis do usuário
+        $rentals = $user->rentals()->with('car')->get();
+
+        return response()->json($rentals);
+    }
 }

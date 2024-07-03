@@ -7,6 +7,7 @@ use App\Http\Controllers\ModelController;
 use App\Http\Controllers\CarController;
 use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\RentalController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +30,5 @@ Route::get('/cars', [CarController::class, 'index']);
 Route::post('/cars/create', [CarController::class, 'store']);
 Route::post('/photos/create', [PhotoController::class, 'store']);
 Route::post('/rentals/create', [RentalController::class, 'store']);
+Route::post('/users/create', [UserController::class, 'store']);
+Route::get('/users/{user_id}/rentals', [UserController::class, 'getUserRentals']);
